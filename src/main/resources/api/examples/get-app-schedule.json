@@ -1,0 +1,14 @@
+{
+    "id": "566a0359e4b0dc517fef5bbb_echoFlow_polling_echoFlow_1",
+    "flow": "echoFlow",
+    "name": "echoFlow Poll",
+    "href": "http://anypoint.mulesoft.com:8080/api/applications/polltest/schedules/566a0359e4b0dc517fef5bbb_echoFlow_polling_echoFlow_1",
+    "lastRun": "2015-12-10T23:11:04.980Z",
+    "enabled": true,
+    "status": "IDLE",
+    "schedule": {
+        "timeUnit": "minutes",
+        "period": 10
+    },
+    "run-href": "http://anypoint.mulesoft.com:8080/api/applications/polltest/schedules/566a0359e4b0dc517fef5bbb_echoFlow_polling_echoFlow_1/run"
+}

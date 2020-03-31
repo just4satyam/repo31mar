@@ -1,0 +1,29 @@
+{
+    "data": [
+        {
+            "loggerName": "org.mule.api.processor.LoggerMessageProcessor",
+            "threadName": "[test-test].Copy_of_echoFlow.stage1.02",
+            "timestamp": 1450128121850,
+            "message": "\norg.mule.DefaultMuleMessage\n{\n  id=b751b960-a2a8-11e5-9d9b-0e4b77f24b53\n  payload=org.glassfish.grizzly.utils.BufferInputStream\n  correlationId=<not set>\n  correlationGroup=-1\n  correlationSeq=-1\n  encoding=UTF-8\n  exceptionPayload=<not set>\n\nMessage properties:\n  INVOCATION scoped properties:\n    pollingFrequency=1000\n  INBOUND scoped properties:\n    MULE_ORIGINATING_ENDPOINT=endpoint.polling.1912630717\n    cache-control=public, no-cache=\"Set-Cookie\", max-age=21\n    cf-ray=254cf63924c50097-IAD\n    connection=keep-alive\n    content-type=text/html; charset=utf-8\n    date=Mon, 14 Dec 2015 21:22:01 GMT\n    expires=Mon, 14 Dec 2015 21:22:23 GMT\n    http.reason=OK\n    http.status=200\n    last-modified=Mon, 14 Dec 2015 21:21:23 GMT\n    server=cloudflare-nginx\n    set-cookie=[__cfduid=d267b5965fec19705b85e5d82160b774d1450128121; expires=Tue, 13-Dec-16 21:22:01 GMT; path=/; domain=.stackoverflow.com; HttpOnly, prov=79f490c4-c64a-4de6-80a3-36b6f19f9cbc; domain=.stackoverflow.com; expires=Fri, 01-Jan-2055 00:00:00 GMT; path=/; HttpOnly]\n    transfer-encoding=chunked\n    vary=*\n    x-frame-options=SAMEORIGIN\n    x-request-guid=2f2996ba-bd71-43ac-bab2-d0e5682ebf51\n  OUTBOUND scoped properties:\n  SESSION scoped properties:\n}",
+            "priority": "INFO",
+            "instanceId": "566f011be4b06b370949daff-0"
+        },
+        {
+            "loggerName": "org.mule.api.processor.LoggerMessageProcessor",
+            "threadName": "[test-test].echoFlow.stage1.02",
+            "timestamp": 1450128121851,
+            "message": "\norg.mule.DefaultMuleMessage\n{\n  id=b7522e90-a2a8-11e5-9d9b-0e4b77f24b53\n  payload=org.glassfish.grizzly.utils.BufferInputStream\n  correlationId=<not set>\n  correlationGroup=-1\n  correlationSeq=-1\n  encoding=UTF-8\n  exceptionPayload=<not set>\n\nMessage properties:\n  INVOCATION scoped properties:\n    pollingFrequency=1000\n  INBOUND scoped properties:\n    MULE_ORIGINATING_ENDPOINT=endpoint.polling.1912630717\n    cache-control=public, no-cache=\"Set-Cookie\", max-age=21\n    cf-ray=254cf63933d2087a-IAD\n    connection=keep-alive\n    content-type=text/html; charset=utf-8\n    date=Mon, 14 Dec 2015 21:22:01 GMT\n    expires=Mon, 14 Dec 2015 21:22:23 GMT\n    http.reason=OK\n    http.status=200\n    last-modified=Mon, 14 Dec 2015 21:21:23 GMT\n    server=cloudflare-nginx\n    set-cookie=[__cfduid=d8f18998797a26f0957f21db409e1741d1450128121; expires=Tue, 13-Dec-16 21:22:01 GMT; path=/; domain=.stackoverflow.com; HttpOnly, prov=7809cd0f-2cbe-4a8f-9df2-c5373732961d; domain=.stackoverflow.com; expires=Fri, 01-Jan-2055 00:00:00 GMT; path=/; HttpOnly]\n    transfer-encoding=chunked\n    vary=*\n    x-frame-options=SAMEORIGIN\n    x-request-guid=169bb6da-6b64-41ee-846a-fda65c51fbf1\n  OUTBOUND scoped properties:\n  SESSION scoped properties:\n}",
+            "priority": "INFO",
+            "instanceId": "566f011be4b06b370949daff-0"
+        },
+        {
+            "loggerName": "org.mule.api.processor.LoggerMessageProcessor",
+            "threadName": "[test-test].Copy_of_echoFlow.stage1.02",
+            "timestamp": 1450128143460,
+            "message": "\norg.mule.DefaultMuleMessage\n{\n  id=c4334d10-a2a8-11e5-9d9b-0e4b77f24b53\n  payload=org.glassfish.grizzly.utils.BufferInputStream\n  correlationId=<not set>\n  correlationGroup=-1\n  correlationSeq=-1\n  encoding=UTF-8\n  exceptionPayload=<not set>\n\nMessage properties:\n  INVOCATION scoped properties:\n    pollingFrequency=1000\n  INBOUND scoped properties:\n    MULE_ORIGINATING_ENDPOINT=endpoint.polling.1912630717\n    cache-control=public, no-cache=\"Set-Cookie\", max-age=40\n    cf-ray=254cf6c047f52456-IAD\n    connection=keep-alive\n    content-type=text/html; charset=utf-8\n    date=Mon, 14 Dec 2015 21:22:23 GMT\n    expires=Mon, 14 Dec 2015 21:23:03 GMT\n    http.reason=OK\n    http.status=200\n    last-modified=Mon, 14 Dec 2015 21:22:03 GMT\n    server=cloudflare-nginx\n    set-cookie=[__cfduid=daba5383a0f8ede6ff1c538ca4eade3fa1450128143; expires=Tue, 13-Dec-16 21:22:23 GMT; path=/; domain=.stackoverflow.com; HttpOnly, prov=6844e5be-37f5-439f-b853-fb47c747d92d; domain=.stackoverflow.com; expires=Fri, 01-Jan-2055 00:00:00 GMT; path=/; HttpOnly]\n    transfer-encoding=chunked\n    vary=*\n    x-frame-options=SAMEORIGIN\n    x-request-guid=0255f6eb-9993-4a1e-91e8-3fbfbce0f277\n  OUTBOUND scoped properties:\n  SESSION scoped properties:\n}",
+            "priority": "INFO",
+            "instanceId": "566f011be4b06b370949daff-0"
+        }
+    ],
+    "total": 3
+}

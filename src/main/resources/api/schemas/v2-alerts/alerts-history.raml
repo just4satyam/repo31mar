@@ -1,0 +1,54 @@
+#%RAML 1.0 DataType
+description: AlertsHistory schema
+properties:
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        triggeredAt:
+          type: integer
+        context:
+          enum: [
+            {
+              "type" : "object",
+              "description" : "Worker Unresponsive",
+              "properties" : {
+                "resource" : {
+                  "type" : "string"
+                },
+                "user" : {
+                  "type" : "string"
+                }
+              }
+            }
+          ]
+        severity:
+          enum: ["INFO", "WARNING", "CRITICAL"]
+        condition:
+          type: object
+          properties:
+            type:
+              enum: [
+                "application-notification",
+                "cpu",
+                "memory",
+                "deployment-success",
+                "deployment-failed",
+                "event-threshold-exceeded",
+                "sdg-up",
+                "sdg-down",
+                "worker-unresponsive",
+                "autoscaled"
+              ]
+        actions:
+          type: array
+          items:
+            type: object
+            properties:
+              state:
+                type: string
+              type:
+                type: string
+  total:
+    type: integer

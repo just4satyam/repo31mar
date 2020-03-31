@@ -1,0 +1,13 @@
+{
+  "deploymentId": "5bb55a67c9801713539d3028",
+  "instanceId": "5bb55a67c9801713539d3028-0",
+  "text": "Trying",
+  "loggerName": "com.mulesoft.agent.buffer.BufferedHandler",
+  "threadName": "pool-34-thread-1",
+  "startTime": 1539213900000,
+  "endTime": 1539300359999,
+  "priority": "INFO",
+  "limitMsgLen": 5000,
+  "limit": 2,
+  "descending": false
+}

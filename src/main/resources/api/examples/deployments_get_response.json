@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "id": "568b9909e4b03fbcf0c72ea6",
+      "state": "PROCESSING",
+      "deploymentConfig": {"name":"myloadbalancer","ipWhitelist":["192.0.2.0/24","198.51.100.23/32"],"httpMode":"redirect","defaultSslEndpoint":0,"sslEndpoints":[{"privateKeyDigest":"75caede4e70d7ffc4bc2ed8f1924467a9d030917","publicKeyDigest":"fd562a311962ee8e278b04982f6b5fc1f5c85535","publicKeyCN":"www.mydomain.com","publicKeySANs":["uat.mydomain.com","qa.mydomain.com"],"clientCertDigest":"fd562a311962ee8e278b04982f6b5fc1f5c85535","clientCertCN":"GeoTrustPrimaryCertificationAuthority–G3","revocationListDigest":"6c390fbdadacb9c4c99341167771943b798a12ef","revocationListLastUpdate":"Mar414:49:082016GMT","revocationListNextUpdate":"Apr314:49:082016GMT","revocationListSerial":"016569BF","verifyClientMode":"off","tlsv1":false,"mappings":[{"inputUri":"{app}/","appName":"{app}","appUri":"/"}]}]},
+      "createTime": 1452585196698,
+      "startTime": 1452585196821
+    }
+  ],
+  "total": 1
+}

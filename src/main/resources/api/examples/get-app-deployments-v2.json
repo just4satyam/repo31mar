@@ -1,0 +1,47 @@
+{
+    "data": [
+        {
+            "deploymentId": "566f011be4b06b370949daff",
+            "createTime": "2015-12-14T17:49:15.731Z",
+            "startTime": "2015-12-14T17:49:19.329Z",
+            "endTime": "2015-12-14T17:53:52.828Z",
+            "instances": [
+                {
+                    "instanceId": "566f011be4b06b370949daff-0",
+                    "publicIPAddress": "52.91.11.88",
+                    "status": "STARTED",
+                    "region": "us-east-1"
+                }
+            ]
+        },
+        {
+            "deploymentId": "566f00c2e4b06b3709496e0d",
+            "createTime": "2015-12-14T17:47:46.833Z",
+            "startTime": "2015-12-14T17:47:49.282Z",
+            "endTime": "2015-12-14T17:49:18.366Z",
+            "instances": []
+        },
+        {
+            "deploymentId": "566efefae4b06b3709475a6b",
+            "createTime": "2015-12-14T17:40:10.659Z",
+            "startTime": "2015-12-14T17:40:14.002Z",
+            "endTime": "2015-12-14T17:43:25.923Z",
+            "instances": []
+        },
+        {
+            "deploymentId": "566efdd5e4b06b37094601dc",
+            "createTime": "2015-12-14T17:35:17.351Z",
+            "startTime": "2015-12-14T17:35:18.228Z",
+            "endTime": "2015-12-14T17:38:30.207Z",
+            "instances": []
+        },
+        {
+            "deploymentId": "566efdd2e4b06b370945ff40",
+            "createTime": "2015-12-14T17:35:14.444Z",
+            "startTime": "2015-12-14T17:35:18.231Z",
+            "endTime": "2015-12-14T17:35:18.356Z",
+            "instances": []
+        }
+    ],
+    "total": 5
+}

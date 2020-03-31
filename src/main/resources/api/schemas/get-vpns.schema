@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "A collection of VpnConnection objects and the total number of returned collections",
+  "properties": {
+    "data": {
+      "type": "array",
+      "description": "A collection of VpnConnection objects that include a unique id, Spec object and VpnConnectionState object",
+      "items": {
+        "$ref": "get-vpn.schema"
+      }
+    },
+    "total": {
+      "type": "integer",
+      "description": "The number of returned VpnConnection objects in the response"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "data",
+    "total"
+  ]
+}

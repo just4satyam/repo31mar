@@ -1,0 +1,3 @@
+[
+  {"op": "replace", "path":"/sslEndpoints/0/mappings", "value": [{"inputUri":"/{app}/hello","appName":"{app}","appUri":"/hello","upstreamProtocol":"http"},{"inputUri":"/{app}/","appName":"{app}","appUri":"/","upstreamProtocol":"http"}] }
+]

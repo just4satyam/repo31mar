@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "CloudHub Auto Scaling Policy",
+  "allowAdditionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The auto scaling policy ID"
+    },
+    "enabled": {
+      "type": "boolean",
+      "description": "Whether the policy is enabled"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The auto scaling policy name"
+    },
+    "scaleType": {
+      "type": "string",
+      "enum": ["WORKER_COUNT", "WORKER_SIZE"],
+      "description": "The scale type of the auto scaling policy"
+    },
+    "metric": {
+      "type": "string",
+      "enum": ["CPU", "MEMORY"],
+      "description": "The metric based on which auto scaling policy scales"
+    },
+    "maxScale": {
+      "type": "number",
+      "enum": [0.1, 0.2, 1, 2, 3, 4, 5, 6, 7, 8, 16],
+      "description": "The maximum number of workers or size of workers for auto scaling"
+    },
+    "minScale": {
+      "type": "number",
+      "enum": [0.1, 0.2, 1, 2, 3, 4, 5, 6, 7, 8, 16],
+      "description": "The minimum number of workers or size of workers for auto scaling"
+    },
+    "scaleUpNextScaleWaitMins": {
+      "type": "number",
+      "description": "Number of minutes to wait before applying new scale up policy"
+    },
+    "scaleDownNextScaleWaitMins": {
+      "type": "number",
+      "description": "Number of minutes to wait before applying new scale down policy"
+    },
+    "scaleUp": {
+      "type": "object",
+      "description": "Scale up policy",
+      "properties": {
+        "value": {
+          "type": "number",
+          "description": "The CPU or memory usage above which scale up policy will take effect"
+        },
+        "periodCount": {
+          "type": "number",
+          "description": "The time in minutes to monitor the CPU/memory for high usage before scaling up"
+        }
+      }
+    },
+    "scaleDown": {
+      "type": "object",
+      "description": "Scale down policy",
+      "properties": {
+        "value": {
+          "type": "number",
+          "description": "The CPU or memory usage below which scale down policy will take effect"
+        },
+        "periodCount": {
+          "type": "number",
+          "description": "The time in minutes to monitor the CPU/memory for low usage before scaling down"
+        }
+      }
+    }
+  }
+}

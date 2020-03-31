@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "description": "Organization Usage Statistics",
+    "properties": {
+        "productionVCoresConsumed":  { "type": "number" },
+        "sandboxVCoresConsumed": { "type": "number" },
+        "staticIpsConsumed": { "type": "integer" }
+    },
+    "required": [ "productionVCoresConsumed", "sandboxVCoresConsumed", "staticIpsConsumed" ]
+}

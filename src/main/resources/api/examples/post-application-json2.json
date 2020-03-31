@@ -1,0 +1,12 @@
+{
+  "applicationSource": {
+    "groupId": "org.mule.examples",
+    "artifactId": "hello-world",
+    "version":"1.4.0",
+    "source": "EXCHANGE"
+  },
+  "applicationInfo": {
+    "domain": "ch-application"
+  },
+  "autoStart": true
+}

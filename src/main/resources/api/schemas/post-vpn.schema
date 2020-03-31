@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Specification for the remote side of the VPN connection\n",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "User-friendly name for VPN connection"
+    },
+    "localAsn": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4294967294,
+      "default": 7224,
+      "description": "The ASN of the gateway on the local end. If not provided, it will default to 7224"
+    },
+    "remoteAsn": {
+      "type": "integer",
+      "minimum": 64512,
+      "maximum": 65534,
+      "default": 65000,
+      "description": "The ASN of the gateway on the remote end. If not provided, it will default to 65000"
+    },
+    "remoteIpAddress": {
+      "type": "string",
+      "description": "The customer's external IP to use for the remote side of the VPN connection",
+      "pattern": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+    },
+    "remoteNetworks": {
+      "type": "array",
+      "uniqueItems": true,
+      "default": [],
+      "description": "The CIDR block for static routes of a VPN connection to a remote endpoint. Can add static routes for a static or BGP VPN connection\n",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tunnelConfigs": {
+      "type": "array",
+      "uniqueItems": true,
+      "default": [],
+      "description": "The CIDR block for static routes of a VPN connection to a remote endpoint. Can add static routes for a static or BGP VPN connection\n",
+      "items": {
+        "type": "object",
+        "description": "The pre-shared key and point-to-point CIDR address to use in VPN tunnels",
+        "properties": {
+          "psk": {
+            "type": "string",
+            "description": "The pre-shared key to use for a VPN tunnel connection. It is required to be between 8 and 64 characters, must contain alphanumeric characters and periods and cannot begin with a \"0\"."
+          },
+          "ptpCidr": {
+            "type": "string",
+            "description": "The CIDR value to be used in the point-to-point connection between a local endpoint and remote endpoint. It must be in the range of 169.254.0.0 to 169.254.255.254 with a 255.255.255.252 subnet mask."
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "psk",
+          "ptpCidr"
+        ]
+      }
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "name",
+    "remoteIpAddress"
+  ]
+}

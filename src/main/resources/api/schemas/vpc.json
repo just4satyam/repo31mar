@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "CloudHub VPC",
+  "allowAdditionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The name of the VPC"
+    },
+    "region": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The CloudHub region where this VPC will exist"
+    },
+    "cidrBlock": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The IP address range that the VPC will use. The largest is /16 and the smallest, /24"
+    },
+    "internalDns": {
+      "default": null,
+      "type": ["object", "null"],
+      "required": [
+        "dnsServers",
+        "specialDomains"
+      ],
+      "allowAdditionalProperties": false,
+      "properties": {
+        "dnsServers": {
+          "type": "array",
+          "description": "A list of DNS server IPs",
+          "items": {
+            "type": "string",
+            "minLength": 7,
+            "maxLength": 15
+          }
+        },
+        "specialDomains": {
+          "type": "array",
+          "description": "A list of domains to be resolved using the special DNS servers",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An explanation about the purpose of this instance."
+          }
+        }
+      }
+    },
+    "ownerId": {
+      "type": "string",
+      "minLength": 34,
+      "maxLength": 34,
+      "description": "The id of the organization that owns the VPC"
+    },
+    "isDefault": {
+      "type": "boolean",
+      "description": "If set to true, the VPC will be associated to all CloudHub environments not explicitly associated to another VPC, including newly created ones",
+      "default": false
+    },
+    "associatedEnvironments": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "A list of CloudHub environments to associate to this VPC",
+      "default": [],
+      "items": {
+        "type": "string",
+        "minLength": 36,
+        "maxLength": 36
+      }
+    },
+    "sharedWith": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "A list of Business Groups to share this VPC with",
+      "default": [],
+      "items": {
+        "type": "string",
+        "minLength": 34,
+        "maxLength": 34
+      }
+    },
+    "firewallRules": {
+      "type": "array",
+      "description": "Inbound firewall rules for all CloudHub workers in this VPC. The list is allow only with an implicit deny all if no rules match",
+      "allowAdditionalProperties": false,
+      "items": {
+        "type": "object",
+        "properties": {
+          "cidrBlock": {
+            "type": "string",
+            "minLength": 9,
+            "maxLength": 18
+          },
+          "protocol": {
+            "type": "string",
+            "enum": ["tcp","udp"],
+            "minLength": 3
+          },
+          "fromPort": {
+            "type": "integer",
+            "maximum": 65535,
+            "minimum": 0
+          },
+          "toPort": {
+            "type": "integer",
+            "maximum": 65535,
+            "minimum": 0
+          }
+        }
+      },
+      "required": [
+        "cidrBlock",
+        "fromPort",
+        "toPort",
+        "protocol"
+      ]
+    }
+  }
+}

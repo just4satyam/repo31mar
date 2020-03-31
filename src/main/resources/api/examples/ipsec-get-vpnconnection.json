@@ -1,0 +1,42 @@
+{
+  "id": "4a6e3da830767b280a80ce33",
+  "spec": {
+    "name": "myDatacenterVpn",
+    "remoteAsn": 65000,
+    "localAsn": 7224,
+    "remoteIpAddress": "100.100.100.100",
+    "routingType": "BGP"
+  },
+  "state": {
+    "vpnConnectionStatus": "AVAILABLE",
+    "createdAt": "2017-01-01T00:00:01-0800",
+    "bgpRoutes": [
+      {
+        "remoteNetwork": "10.5.0.0/16",
+        "state": "ACTIVE"
+      }
+    ],
+    "staticRoutes": [],
+    "vpnTunnels": [
+      {
+        "acceptedRouteCount": 2,
+        "lastStatusChange": "2018-01-13T16:30:07-0800",
+        "localExternalIpAddress": "50.112.49.102",
+        "localPtpIpAddress": "169.254.13.241",
+        "remotePtpIpAddress": "169.254.13.242",
+        "psk": "LKvQAyV7DyR1Q7kZoIAymsqFOh3SWb2S",
+        "status": "UP",
+        "statusMessage": ""
+      },{
+        "acceptedRouteCount": 2,
+        "lastStatusChange": "2018-01-13T16:30:07-0800",
+        "localExternalIpAddress": "34.216.124.13",
+        "localPtpIpAddress": "169.254.15.17",
+        "remotePtpIpAddress": "169.254.15.18",
+        "psk": "q.NFQABcVnKLp2.zjR7Pw7YtH9gICJlt",
+        "status": "DOWN",
+        "statusMessage": ""
+      }
+    ]
+  }
+}

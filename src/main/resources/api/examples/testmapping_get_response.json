@@ -1,0 +1,6 @@
+{
+  "domainIdx": 2,
+  "ruleIdx": 2,
+  "appName": "app123",
+  "outputURI": "http://mule-worker-internal-app123.cloudhub.io:8081?greeting=hello"
+}

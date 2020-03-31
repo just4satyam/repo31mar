@@ -1,0 +1,28 @@
+[
+    {
+        "recordId": "16660AA8FF15bb55a67c9801713539d3028-05BB55A70000000D7",
+        "deploymentId": "5bb55a67c9801713539d3028",
+        "instanceId": "5bb55a67c9801713539d3028-0",
+        "line": 215,
+        "event": {
+            "loggerName": "com.mulesoft.agent.buffer.BufferedHandler",
+            "threadName": "pool-34-thread-1",
+            "timestamp": 1539220082673,
+            "message": "Trying to retry flushing on buffer. Remaining attempts: 2",
+            "priority": "INFO"
+        }
+    },
+    {
+        "recordId": "166613ED4455bb55a67c9801713539d3028-05BB55A70000000D8",
+        "deploymentId": "5bb55a67c9801713539d3028",
+        "instanceId": "5bb55a67c9801713539d3028-0",
+        "line": 216,
+        "event": {
+            "loggerName": "com.mulesoft.agent.buffer.BufferedHandler",
+            "threadName": "pool-34-thread-1",
+            "timestamp": 1539229799493,
+            "message": "Trying to retry flushing on buffer. Remaining attempts: 2",
+            "priority": "INFO"
+        }
+    }
+]

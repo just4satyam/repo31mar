@@ -1,0 +1,9 @@
+[{
+  "publicKeyDigest":"2686e6dc262265c39038cbf0c4846110e75fe4bc",
+  "publicKeyCN":"example.com",
+  "publicKeySANs": ["example.com"],
+  "privateKeyDigest": "2686e6dc262265c39038cbf0c4846110e75fe4bc",
+  "clientCertDigest": "2686e6dc262265c39038cbf0c4846110e75fe4bc",
+  "clientCertCN": "client.com",
+  "revocationListDigest": "2686e6dc262265c39038cbf0c4846110e75fe4bc"
+}]

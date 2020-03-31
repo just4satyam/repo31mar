@@ -1,0 +1,312 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "id": "http://jsonschema.net/data",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "triggeredAt": {
+            "id": "http://jsonschema.net/data/0/triggeredAt",
+            "type": "integer"
+          },
+          "context": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/contextDefinitions/application-notification"
+              },
+              {
+                "$ref": "#/contextDefinitions/autoscaled"
+              },
+              {
+                "$ref": "#/contextDefinitions/cpu"
+              },
+              {
+                "$ref": "#/contextDefinitions/memory"
+              },
+              {
+                "$ref": "#/contextDefinitions/deployment-failed"
+              },
+              {
+                "$ref": "#/contextDefinitions/deployment-success"
+              },
+              {
+                "$ref": "#/contextDefinitions/event-threshold-exceeded"
+              },
+              {
+                "$ref": "#/contextDefinitions/sdg-up"
+              },
+              {
+                "$ref": "#/contextDefinitions/sdg-down"
+              },
+              {
+                "$ref": "#/contextDefinitions/worker-unresponsive"
+              }
+            ]
+          },
+          "severity": {
+            "id": "http://jsonschema.net/data/0/severity",
+             "enum": ["INFO", "WARNING", "CRITICAL"]
+          },
+          "condition": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "id": "http://jsonschema.net/data/0/condition/type",
+                "enum": [
+                  "application-notification",
+                  "cpu",
+                  "memory",
+                  "deployment-success",
+                  "deployment-failed",
+                  "event-threshold-exceeded",
+                  "sdg-up",
+                  "sdg-down",
+                  "worker-unresponsive",
+                  "autoscaled"
+                ]
+              }
+            }
+          },
+          "actions": {
+            "id": "http://jsonschema.net/data/0/actions",
+            "type": "array",
+            "items": {
+              "id": "http://jsonschema.net/data/0/actions/0",
+              "type": "object",
+              "properties": {
+                "state": {
+                  "id": "http://jsonschema.net/data/0/actions/0/state",
+                  "type": "string"
+                },
+                "type": {
+                  "id": "http://jsonschema.net/data/0/actions/0/type",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "triggeredAt",
+          "context",
+          "severity",
+          "condition",
+          "actions"
+        ],
+        "contextDefinitions": {
+          "application-notification": {
+            "required": [
+              "resource",
+              "user",
+              "priority",
+              "transactionId",
+              "message"
+            ],
+            "properties": {
+              "resource": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              },
+              "priority": {
+                "type": "string"
+              },
+              "transactionId": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          },
+          "autoscaled": {
+            "required": [
+              "resource",
+              "success"
+            ],
+            "properties": {
+              "workerSize": {
+                "enum": [
+                  "0.1",
+                  "0.2",
+                  "1",
+                  "2",
+                  "4"
+                ]
+              },
+              "workerCount": {
+                "type": "integer",
+                "maximum": 4,
+                "minimum": 1
+              },
+              "resource": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "success": {
+                "type": "boolean"
+              }
+            }
+          },
+          "cpu": {
+            "required": [
+              "currentWorkerCount",
+              "currentWorkerSize",
+              "resource",
+              "state"
+            ],
+            "properties": {
+              "currentWorkerSize": {
+                "enum": [
+                  "0.1",
+                  "0.2",
+                  "1",
+                  "2",
+                  "4"
+                ]
+              },
+              "currentWorkerCount": {
+                "type": "integer",
+                "maximum": 4,
+                "minimum": 1
+              },
+              "resource": {
+                "type": "string"
+              }
+            }
+          },
+          "deployment-failed": {
+            "required": [
+              "resource",
+              "user",
+              "message"
+            ],
+            "properties": {
+              "resource": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          },
+          "deployment-success": {
+            "required": [
+              "resource",
+              "user"
+            ],
+            "properties": {
+              "resource": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              }
+            }
+          },
+          "event-threshold-exceeded": {
+            "required": [
+              "resource",
+              "user"
+            ],
+            "properties": {
+              "resource": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              }
+            }
+          },
+          "memory": {
+            "required": [
+              "currentWorkerCount",
+              "currentWorkerSize",
+              "resource",
+              "state"
+            ],
+            "properties": {
+              "currentWorkerSize": {
+                "enum": [
+                  "0.1",
+                  "0.2",
+                  "1",
+                  "2",
+                  "4"
+                ]
+              },
+              "currentWorkerCount": {
+                "type": "integer",
+                "maximum": 4,
+                "minimum": 1
+              },
+              "resource": {
+                "type": "string"
+              }
+            }
+          },
+          "sdg-down": {
+            "required": [
+              "resource",
+              "user"
+            ],
+            "properties": {
+              "resource": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              }
+            }
+          },
+          "sdg-up": {
+            "required": [
+              "resource",
+              "user"
+            ],
+            "properties": {
+              "resource": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              }
+            }
+          },
+          "worker-unresponsive": {
+            "required": [
+              "resource",
+              "user"
+            ],
+            "properties": {
+              "resource": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "total": {
+      "id": "http://jsonschema.net/total",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "data",
+    "total"
+  ]
+}

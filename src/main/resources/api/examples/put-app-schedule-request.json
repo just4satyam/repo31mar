@@ -1,0 +1,9 @@
+{
+    "id": "566a0359e4b0dc517fef5bbb_echoFlow_polling_echoFlow_1",
+    "name": "echoFlow Poll",
+    "enabled": true,
+    "schedule": {
+        "timeUnit": "minutes",
+        "period": 10
+    }
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "name": "queued",
+        "functions": [
+            "AVG"
+        ]
+    },
+    {
+        "name": "inFlight",
+        "functions": [
+            "AVG"
+        ]
+    },
+    {
+        "name": "added",
+        "functions": [
+            "COUNT"
+        ]
+    },
+    {
+        "name": "dequeued",
+        "functions": [
+            "COUNT"
+        ]
+    }
+]

@@ -1,0 +1,21 @@
+{
+  "name": "failure",
+  "severity": "INFO",
+  "condition": {
+    "type": "deployment-failed",
+    "resources": [
+      "my-app-name"
+    ],
+    "resourceType": "application"
+  },
+  "actions": [
+    {
+      "type": "email",
+      "emails": [
+        "me@example.com"
+      ],
+      "subject": "subject line",
+      "content": "deployment failed for ${resource}"
+    }
+  ]
+}

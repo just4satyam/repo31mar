@@ -1,0 +1,17 @@
+[
+  {
+    "id" : "schedule-id1",
+    "enabled" : true,
+    "runNow" : true
+  },
+  {
+    "id" : "schedule-id2",
+    "enabled" : true,
+    "runNow" : true
+  },
+  {
+    "id" : "schedule-id3",
+    "enabled" : false,
+    "runNow" : false
+  }
+]

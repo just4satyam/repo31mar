@@ -1,0 +1,166 @@
+{
+    "data": [
+        {
+            "loggerName": "org.mule.module.launcher.application.DefaultMuleApplication",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115553412,
+            "message": "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n+ Initializing app 'test-test'                             +\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "com.mulesoft.ch.monitoring.MonitoringCoreExtension",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115554065,
+            "message": "Monitoring enabled: true",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "com.mulesoft.ch.monitoring.MonitoringCoreExtension",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115554066,
+            "message": "Registering ping flow injector...",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "com.mulesoft.ch.queue.boot.PersistentQueueCoreExtension",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115554083,
+            "message": "The PersistentQueueManager is NOT configured. The normal VM queue manager will be used.",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.lifecycle.AbstractLifecycleManager",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115554119,
+            "message": "Initialising RegistryBroker",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.module.extension.internal.manager.DefaultExtensionManager",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115554265,
+            "message": "Starting discovery of extensions",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.module.extension.internal.manager.DefaultExtensionManager",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115555132,
+            "message": "Discovered 1 extensions",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.module.extension.internal.manager.DefaultExtensionManager",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115555132,
+            "message": "Registering extension validation (version 3.7)",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.config.spring.MuleArtifactContext",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115555560,
+            "message": "Refreshing org.mule.config.spring.MuleArtifactContext@49cfd433: startup date [Mon Dec 14 17:52:35 UTC 2015]; root of context hierarchy",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.config.spring.processors.NoDevkitInjectorProcessor",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115559139,
+            "message": "JSR-330 'javax.inject.Inject' annotation found and supported for autowiring",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.springframework.beans.factory.support.DefaultListableBeanFactory",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115559778,
+            "message": "Bean creation exception on FactoryBean type check: org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name '_defaultUserObjectStore': Requested bean is currently in creation: Is there an unresolvable circular reference?",
+            "priority": "WARN"
+        },
+        {
+            "loggerName": "org.springframework.beans.factory.support.DefaultListableBeanFactory",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115559916,
+            "message": "Bean creation exception on FactoryBean type check: org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name '_defaultUserObjectStore': Requested bean is currently in creation: Is there an unresolvable circular reference?",
+            "priority": "WARN"
+        },
+        {
+            "loggerName": "org.mule.lifecycle.AbstractLifecycleManager",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115562916,
+            "message": "Initialising connector: connector.polling.mule.default",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.lifecycle.AbstractLifecycleManager",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115563399,
+            "message": "Initialising model: _muleSystemModel",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.construct.FlowConstructLifecycleManager",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115564260,
+            "message": "Initialising flow: echoFlow",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.exception.DefaultMessagingExceptionStrategy",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115564274,
+            "message": "Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@681f155",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.processor.SedaStageLifecycleManager",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115564404,
+            "message": "Initialising service: echoFlow.stage1",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.construct.FlowConstructLifecycleManager",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115564469,
+            "message": "Initialising flow: Copy_of_echoFlow",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.exception.DefaultMessagingExceptionStrategy",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115564469,
+            "message": "Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@5face4a9",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.processor.SedaStageLifecycleManager",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115564474,
+            "message": "Initialising service: Copy_of_echoFlow.stage1",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.util.journal.TransactionJournal",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115564522,
+            "message": "Using files for tx logs /opt/mule/mule-3.7.2-R44/./.mule/test-test/queue-tx-log/tx1.log and /opt/mule/mule-3.7.2-R44/./.mule/test-test/queue-tx-log/tx2.log",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.util.journal.TransactionJournal",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115564523,
+            "message": "Using files for tx logs /opt/mule/mule-3.7.2-R44/./.mule/test-test/queue-xa-tx-log/tx1.log and /opt/mule/mule-3.7.2-R44/./.mule/test-test/queue-xa-tx-log/tx2.log",
+            "priority": "INFO"
+        },
+        {
+            "loggerName": "org.mule.config.spring.SpringXmlConfigurationBuilder",
+            "threadName": "qtp18605202-31",
+            "timestamp": 1450115564717,
+            "message": "Configured Mule using \"org.mule.config.spring.SpringXmlConfigurationBuilder\" with configuration resource(s): \"[ConfigResource{resourceName='/opt/mule/mule-3.7.2-R44/apps/test-test/queue-test2.xml'}]\"",
+            "priority": "INFO"
+        }
+    ],
+    "total": 14
+}

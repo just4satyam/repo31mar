@@ -1,0 +1,23 @@
+[
+  {
+    "id": "5994bb6ee4b0fce59b281798",
+    "enabled": true,
+    "maxScale": 2,
+    "minScale": 1,
+    "scaleType": "WORKER_COUNT",
+    "description": "policy_name",
+    "metric": "CPU",
+    "scaleUpNextScaleWaitMins": 30,
+    "scaleDownNextScaleWaitMins": 30,
+    "scaleUp": {
+      "value": 80,
+      "periodMins": 1,
+      "periodCount": 10
+    },
+    "scaleDown": {
+      "value": 20,
+      "periodMins": 1,
+      "periodCount": 10
+    }
+  }
+]

@@ -1,0 +1,233 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "A collection of VpnConnection objects and the total number of returned collections",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 24,
+      "maxLength": 24,
+      "description": "This object's globally unique ID"
+    },
+    "spec": {
+      "type": "object",
+      "description": "Specification for the remote side of the VPN connection\n",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "User-friendly name for VPN connection"
+        },
+        "localAsn": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4294967294,
+          "default": 7224,
+          "description": "The ASN of the gateway on the local end. If not provided, it will default to 7224"
+        },
+        "remoteAsn": {
+          "type": "integer",
+          "minimum": 64512,
+          "maximum": 65534,
+          "default": 65000,
+          "description": "The ASN of the gateway on the remote end. If not provided, it will default to 65000"
+        },
+        "remoteIpAddress": {
+          "type": "string",
+          "description": "The customer's external IP to use for the remote side of the VPN connection",
+          "pattern": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+        },
+        "remoteNetworks": {
+          "type": "array",
+          "uniqueItems": true,
+          "default": [],
+          "description": "The CIDR block for static routes of a VPN connection to a remote endpoint. Can add static routes for a static or BGP VPN connection\n",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tunnelConfigs": {
+          "type": "array",
+          "uniqueItems": true,
+          "default": [],
+          "description": "The CIDR block for static routes of a VPN connection to a remote endpoint. Can add static routes for a static or BGP VPN connection\n",
+          "items": {
+            "type": "object",
+            "description": "The pre-shared key and point-to-point CIDR address to use in VPN tunnels",
+            "properties": {
+              "psk": {
+                "type": "string",
+                "description": "The pre-shared key to use for a VPN tunnel connection. It is required to be between 8 and 64 characters, must contain alphanumeric characters and periods and cannot begin with a \"0\"."
+              },
+              "ptpCidr": {
+                "type": "string",
+                "description": "The CIDR value to be used in the point-to-point connection between a local endpoint and remote endpoint. It must be in the range of 169.254.0.0 to 169.254.255.254 with a 255.255.255.252 subnet mask."
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "psk",
+              "ptpCidr"
+            ]
+          }
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "name",
+        "remoteIpAddress",
+        "routingType"
+      ]
+    },
+    "state": {
+      "type": "object",
+      "description": "The state of a provisioned VPN connection and tunnels",
+      "properties": {
+        "vpnConnectionStatus": {
+          "type": "string",
+          "description": "The state of the VPN connection, only the infrastructure itself and not any tunnels",
+          "enum": [
+            "PENDING",
+            "AVAILABLE",
+            "DELETING",
+            "DELETED"
+          ]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "An RFC3339 timestamp in UTC time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2})(:)(\\d{2})(:)(\\d{2})(\\.\\d+)?(Z|([+-])(\\d{2})(:)?(\\d{2}))$"
+        },
+        "bgpRoutes": {
+          "type": "array",
+          "default": [],
+          "uniqueItems": true,
+          "description": "The BGP routes and their state that are propagated to the local endpoint",
+          "items": {
+            "type": "object",
+            "description": "The status of BGP routes in a VPN connection, taken from VPC route table",
+            "properties": {
+              "remoteNetwork": {
+                "type": "string",
+                "description": "The CIDR of a remote network for a route propagated to the local VPC"
+              },
+              "state": {
+                "type": "string",
+                "description": "The state of the BGP route",
+                "enum": [
+                  "ACTIVE",
+                  "BLACKHOLE"
+                ]
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "remoteNetwork",
+              "state"
+            ]
+          }
+        },
+        "staticRoutes": {
+          "type": "array",
+          "default": [],
+          "uniqueItems": true,
+          "description": "The static routes that are added to a VPN connection. Can be added to either a static or BGP VPN connection",
+          "items": {
+            "type": "object",
+            "description": "The status of a static route in a VPN connection, including the destination CIDR and status\n",
+            "properties": {
+              "remoteNetwork": {
+                "type": "string",
+                "description": "The CIDR block associated with the remote subnet of the customer network"
+              },
+              "state": {
+                "type": "string",
+                "description": "The state of the static route configured for a VPN connection",
+                "enum": [
+                  "PENDING",
+                  "AVAILABLE",
+                  "DELETING",
+                  "DELETED"
+                ]
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "remoteNetwork",
+              "state"
+            ]
+          }
+        },
+        "vpnTunnels": {
+          "type": "array",
+          "uniqueItems": true,
+          "description": "An array of two VpnTunnel items containing state properties",
+          "items": {
+            "type": "object",
+            "description": "The state of a redundant VPN tunnel in a VPNConnection",
+            "properties": {
+              "acceptedRouteCount": {
+                "type": "integer",
+                "description": "The number of routes, static or BGP, that the tunnel enables"
+              },
+              "lastStatusChange": {
+                "type": "string",
+                "description": "The time that the state of the tunnel last changed",
+                "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2})(:)(\\d{2})(:)(\\d{2})(\\.\\d+)?(Z|([+-])(\\d{2})(:)?(\\d{2}))$"
+              },
+              "localExternalIpAddress": {
+                "type": "string",
+                "description": "The external IP address of the local endpoint for the tunnel"
+              },
+              "localPtpIpAddress": {
+                "type": "string",
+                "description": "The internal (169.254.0.0/16 255.255.255.252) address of the local side of the VPN connection"
+              },
+              "remotePtpIpAddress": {
+                "type": "string",
+                "description": "The internal (169.254.0.0/16 255.255.255.252) address of the remote side of the VPN connection"
+              },
+              "psk": {
+                "type": "string",
+                "description": "The PSK for a VPN connection tunnel, either generated or submitted by customer"
+              },
+              "status": {
+                "type": "string",
+                "description": "The state of the VPN connection, tunnel-specific",
+                "enum": [
+                  "UP",
+                  "DOWN"
+                ]
+              },
+              "statusMessage": {
+                "type": "string",
+                "description": "If an error occurs, a description of that error"
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "acceptedRouteCount",
+              "lastStatusChange",
+              "localExternalIpAddress",
+              "localPtpIpAddress",
+              "remotePtpIpAddress",
+              "psk",
+              "status"
+            ]
+          }
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "vpnConnectionStatus",
+        "createdAt",
+        "vpnTunnels"
+      ]
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "spec",
+    "state"
+  ]
+}

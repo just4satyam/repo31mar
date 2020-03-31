@@ -1,0 +1,220 @@
+[2015-12-14 17:52:33.412] INFO    org.mule.module.launcher.application.DefaultMuleApplication [qtp18605202-31]: (t:null) 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'test-test'                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[2015-12-14 17:52:34.065] INFO    com.mulesoft.ch.monitoring.MonitoringCoreExtension [qtp18605202-31]: (t:null) Monitoring enabled: true
+[2015-12-14 17:52:34.066] INFO    com.mulesoft.ch.monitoring.MonitoringCoreExtension [qtp18605202-31]: (t:null) Registering ping flow injector...
+[2015-12-14 17:52:34.083] INFO    com.mulesoft.ch.queue.boot.PersistentQueueCoreExtension [qtp18605202-31]: (t:null) The PersistentQueueManager is NOT configured. The normal VM queue manager will be used.
+[2015-12-14 17:52:34.119] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Initialising RegistryBroker
+[2015-12-14 17:52:34.265] INFO    org.mule.module.extension.internal.manager.DefaultExtensionManager [qtp18605202-31]: (t:null) Starting discovery of extensions
+[2015-12-14 17:52:35.132] INFO    org.mule.module.extension.internal.manager.DefaultExtensionManager [qtp18605202-31]: (t:null) Discovered 1 extensions
+[2015-12-14 17:52:35.132] INFO    org.mule.module.extension.internal.manager.DefaultExtensionManager [qtp18605202-31]: (t:null) Registering extension validation (version 3.7)
+[2015-12-14 17:52:35.560] INFO    org.mule.config.spring.MuleArtifactContext [qtp18605202-31]: (t:null) Refreshing org.mule.config.spring.MuleArtifactContext@49cfd433: startup date [Mon Dec 14 17:52:35 UTC 2015]; root of context hierarchy
+[2015-12-14 17:52:39.139] INFO    org.mule.config.spring.processors.NoDevkitInjectorProcessor [qtp18605202-31]: (t:null) JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2015-12-14 17:52:39.778] WARN    org.springframework.beans.factory.support.DefaultListableBeanFactory [qtp18605202-31]: (t:null) Bean creation exception on FactoryBean type check: org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name '_defaultUserObjectStore': Requested bean is currently in creation: Is there an unresolvable circular reference?
+[2015-12-14 17:52:39.916] WARN    org.springframework.beans.factory.support.DefaultListableBeanFactory [qtp18605202-31]: (t:null) Bean creation exception on FactoryBean type check: org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name '_defaultUserObjectStore': Requested bean is currently in creation: Is there an unresolvable circular reference?
+[2015-12-14 17:52:42.916] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Initialising connector: connector.polling.mule.default
+[2015-12-14 17:52:43.399] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Initialising model: _muleSystemModel
+[2015-12-14 17:52:44.260] INFO    org.mule.construct.FlowConstructLifecycleManager [qtp18605202-31]: (t:null) Initialising flow: echoFlow
+[2015-12-14 17:52:44.274] INFO    org.mule.exception.DefaultMessagingExceptionStrategy [qtp18605202-31]: (t:null) Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@681f155
+[2015-12-14 17:52:44.404] INFO    org.mule.processor.SedaStageLifecycleManager [qtp18605202-31]: (t:null) Initialising service: echoFlow.stage1
+[2015-12-14 17:52:44.469] INFO    org.mule.construct.FlowConstructLifecycleManager [qtp18605202-31]: (t:null) Initialising flow: Copy_of_echoFlow
+[2015-12-14 17:52:44.469] INFO    org.mule.exception.DefaultMessagingExceptionStrategy [qtp18605202-31]: (t:null) Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@5face4a9
+[2015-12-14 17:52:44.474] INFO    org.mule.processor.SedaStageLifecycleManager [qtp18605202-31]: (t:null) Initialising service: Copy_of_echoFlow.stage1
+[2015-12-14 17:52:44.522] INFO    org.mule.util.journal.TransactionJournal [qtp18605202-31]: (t:null) Using files for tx logs /opt/mule/mule-3.7.2-R44/./.mule/test-test/queue-tx-log/tx1.log and /opt/mule/mule-3.7.2-R44/./.mule/test-test/queue-tx-log/tx2.log
+[2015-12-14 17:52:44.523] INFO    org.mule.util.journal.TransactionJournal [qtp18605202-31]: (t:null) Using files for tx logs /opt/mule/mule-3.7.2-R44/./.mule/test-test/queue-xa-tx-log/tx1.log and /opt/mule/mule-3.7.2-R44/./.mule/test-test/queue-xa-tx-log/tx2.log
+[2015-12-14 17:52:44.717] INFO    org.mule.config.spring.SpringXmlConfigurationBuilder [qtp18605202-31]: (t:null) Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='/opt/mule/mule-3.7.2-R44/apps/test-test/queue-test2.xml'}]"
+[2015-12-14 17:52:44.733] INFO    org.mule.config.builders.AutoConfigurationBuilder [qtp18605202-31]: (t:null) Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='/opt/mule/mule-3.7.2-R44/apps/test-test/queue-test2.xml'}]"
+[2015-12-14 17:52:44.737] INFO    com.mulesoft.ch.batch.BatchCoreExtension [qtp18605202-31]: (t:null) Persistent queues is not enabled for batch module as it was not configured in Cloudhub console
+[2015-12-14 17:52:44.737] INFO    org.mule.module.launcher.application.DefaultMuleApplication [qtp18605202-31]: (t:null) 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'test-test'                                 +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[2015-12-14 17:52:44.776] INFO    org.mule.util.queue.QueueXaResourceManager [qtp18605202-31]: (t:null) Starting ResourceManager
+[2015-12-14 17:52:44.777] INFO    org.mule.util.queue.QueueXaResourceManager [qtp18605202-31]: (t:null) Started ResourceManager
+[2015-12-14 17:52:44.781] INFO    com.mulesoft.ch.objectstore.ObjectStoreImpl [qtp18605202-31]: (t:null) Successfully opened CloudHub ObjectStore
+[2015-12-14 17:52:44.782] INFO    com.mulesoft.ch.objectstore.ObjectStoreImpl [qtp18605202-31]: (t:null) Successfully opened CloudHub ObjectStore
+[2015-12-14 17:52:44.782] INFO    com.mulesoft.ch.objectstore.ObjectStoreImpl [qtp18605202-31]: (t:null) Successfully opened CloudHub ObjectStore
+[2015-12-14 17:52:44.823] INFO    org.mule.transport.polling.MessageProcessorPollingConnector [qtp18605202-31]: (t:null) Connected: MessageProcessorPollingConnector
+{
+  name=connector.polling.mule.default
+  lifecycle=initialise
+  this=6f06c0a4
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[polling]
+  serviceOverrides=<none>
+}
+
+[2015-12-14 17:52:44.824] INFO    org.mule.transport.polling.MessageProcessorPollingConnector [qtp18605202-31]: (t:null) Starting: MessageProcessorPollingConnector
+{
+  name=connector.polling.mule.default
+  lifecycle=initialise
+  this=6f06c0a4
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[polling]
+  serviceOverrides=<none>
+}
+
+[2015-12-14 17:52:44.853] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Starting connector: connector.polling.mule.default
+[2015-12-14 17:52:44.859] INFO    org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent [qtp18605202-31]: (t:null) 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[2015-12-14 17:52:44.869] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Starting model: _muleSystemModel
+[2015-12-14 17:52:44.874] INFO    org.mule.construct.FlowConstructLifecycleManager [qtp18605202-31]: (t:null) Starting flow: echoFlow
+[2015-12-14 17:52:44.875] INFO    org.mule.processor.SedaStageLifecycleManager [qtp18605202-31]: (t:null) Starting service: echoFlow.stage1
+[2015-12-14 17:52:44.927] INFO    org.mule.transport.polling.MessageProcessorPollingConnector [qtp18605202-31]: (t:null) Registering listener: echoFlow on endpointUri: polling://-1912630717
+[2015-12-14 17:52:44.954] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Initialising: 'null'. Object is: MessageProcessorPollingMessageReceiver
+[2015-12-14 17:52:45.026] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Initialising Bean: polling://echoFlow/77660243
+[2015-12-14 17:52:45.027] INFO    org.mule.transport.polling.MessageProcessorPollingMessageReceiver [qtp18605202-31]: (t:null) Connecting clusterizable message receiver
+[2015-12-14 17:52:45.029] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Starting: 'null'. Object is: MessageProcessorPollingMessageReceiver
+[2015-12-14 17:52:45.030] INFO    org.mule.transport.polling.MessageProcessorPollingMessageReceiver [qtp18605202-31]: (t:null) Starting clusterizable message receiver
+[2015-12-14 17:52:45.057] INFO    org.mule.construct.FlowConstructLifecycleManager [qtp18605202-31]: (t:null) Starting flow: Copy_of_echoFlow
+[2015-12-14 17:52:45.058] INFO    org.mule.processor.SedaStageLifecycleManager [qtp18605202-31]: (t:null) Starting service: Copy_of_echoFlow.stage1
+[2015-12-14 17:52:45.062] INFO    org.mule.transport.polling.MessageProcessorPollingConnector [qtp18605202-31]: (t:null) Registering listener: Copy_of_echoFlow on endpointUri: polling://-1912630717
+[2015-12-14 17:52:45.062] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Initialising: 'null'. Object is: MessageProcessorPollingMessageReceiver
+[2015-12-14 17:52:45.106] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Initialising Bean: polling://Copy_of_echoFlow/516281868
+[2015-12-14 17:52:45.107] INFO    org.mule.transport.polling.MessageProcessorPollingMessageReceiver [qtp18605202-31]: (t:null) Connecting clusterizable message receiver
+[2015-12-14 17:52:45.109] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Starting: 'null'. Object is: MessageProcessorPollingMessageReceiver
+[2015-12-14 17:52:45.110] INFO    org.mule.transport.polling.MessageProcessorPollingMessageReceiver [qtp18605202-31]: (t:null) Starting clusterizable message receiver
+[2015-12-14 17:52:45.387] WARN    org.mule.transport.http.HttpConnector [qtp18605202-31]: (t:null) HTTP transport is deprecated and will be removed in Mule 4.0. Use HTTP module instead.
+[2015-12-14 17:52:45.498] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Initialising connector: connector.http.mule.default
+[2015-12-14 17:52:45.738] INFO    com.mulesoft.ch.monitoring.ping.PingFlowInjector [qtp18605202-31]: (t:null) No suitable connector in application, new one is created and used.
+[2015-12-14 17:52:45.740] INFO    org.mule.transport.http.HttpConnector [qtp18605202-31]: (t:null) Connected: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=2a4640c9
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+[2015-12-14 17:52:45.764] INFO    org.mule.transport.http.HttpConnector [qtp18605202-31]: (t:null) Starting: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=2a4640c9
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+[2015-12-14 17:52:45.765] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Starting connector: connector.http.mule.default
+[2015-12-14 17:52:45.770] INFO    org.mule.construct.FlowConstructLifecycleManager [qtp18605202-31]: (t:null) Initialising flow: ____ping____flow_____1546378262
+[2015-12-14 17:52:45.771] INFO    org.mule.exception.DefaultMessagingExceptionStrategy [qtp18605202-31]: (t:null) Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@38ac96bc
+[2015-12-14 17:52:45.781] INFO    org.mule.construct.FlowConstructLifecycleManager [qtp18605202-31]: (t:null) Starting flow: ____ping____flow_____1546378262
+[2015-12-14 17:52:45.782] INFO    org.mule.transport.http.HttpConnector [qtp18605202-31]: (t:null) Registering listener: ____ping____flow_____1546378262 on endpointUri: http://localhost:7557/____ping____
+[2015-12-14 17:52:45.786] INFO    org.mule.transport.service.DefaultTransportServiceDescriptor [qtp18605202-31]: (t:null) Loading default response transformer: org.mule.transport.http.transformers.MuleMessageToHttpResponse
+[2015-12-14 17:52:45.974] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Initialising: 'null'. Object is: HttpMessageReceiver
+[2015-12-14 17:52:46.004] INFO    org.mule.transport.http.HttpMessageReceiver [qtp18605202-31]: (t:null) Connecting clusterizable message receiver
+[2015-12-14 17:52:46.075] WARN    org.mule.transport.tcp.TcpServerSocketFactory [qtp18605202-31]: (t:null) Localhost is being bound to all local interfaces as specified by the "mule.tcp.bindlocalhosttoalllocalinterfaces" system property. This property may be removed in a future version of Mule.
+[2015-12-14 17:52:46.095] INFO    org.mule.lifecycle.AbstractLifecycleManager [qtp18605202-31]: (t:null) Starting: 'null'. Object is: HttpMessageReceiver
+[2015-12-14 17:52:46.095] INFO    org.mule.transport.http.HttpMessageReceiver [qtp18605202-31]: (t:null) Starting clusterizable message receiver
+[2015-12-14 17:52:46.160] INFO    org.mule.module.management.agent.WrapperManagerAgent [qtp18605202-31]: (t:null) Mule is embedded in a container already launched by a wrapper.Duplicates will not be registered. Use the org.tanukisoftware.wrapper:type=WrapperManager MBean instead for control.
+[2015-12-14 17:52:46.219] INFO    org.mule.module.management.agent.AbstractJmxAgent [qtp18605202-31]: (t:null) Attempting to register service with name: Mule.test-test:type=Endpoint,service="echoFlow",connector=connector.polling.mule.default,name="endpoint.polling.1912630717"
+[2015-12-14 17:52:46.220] INFO    org.mule.module.management.agent.AbstractJmxAgent [qtp18605202-31]: (t:null) Registered Endpoint Service with name: Mule.test-test:type=Endpoint,service="echoFlow",connector=connector.polling.mule.default,name="endpoint.polling.1912630717"
+[2015-12-14 17:52:46.221] INFO    org.mule.module.management.agent.AbstractJmxAgent [qtp18605202-31]: (t:null) Attempting to register service with name: Mule.test-test:type=Endpoint,service="Copy_of_echoFlow",connector=connector.polling.mule.default,name="endpoint.polling.1912630717"
+[2015-12-14 17:52:46.222] INFO    org.mule.module.management.agent.AbstractJmxAgent [qtp18605202-31]: (t:null) Registered Endpoint Service with name: Mule.test-test:type=Endpoint,service="Copy_of_echoFlow",connector=connector.polling.mule.default,name="endpoint.polling.1912630717"
+[2015-12-14 17:52:46.237] INFO    org.mule.module.management.agent.AbstractJmxAgent [qtp18605202-31]: (t:null) Attempting to register service with name: Mule.test-test:type=Endpoint,service="____ping____flow_____1546378262",connector=connector.http.mule.default,name="endpoint.http.localhost.7557.ping"
+[2015-12-14 17:52:46.237] INFO    org.mule.module.management.agent.AbstractJmxAgent [qtp18605202-31]: (t:null) Registered Endpoint Service with name: Mule.test-test:type=Endpoint,service="____ping____flow_____1546378262",connector=connector.http.mule.default,name="endpoint.http.localhost.7557.ping"
+[2015-12-14 17:52:46.239] INFO    org.mule.module.management.agent.AbstractJmxAgent [qtp18605202-31]: (t:null) Registered Connector Service with name Mule.test-test:type=Connector,name="connector.polling.mule.default.1"
+[2015-12-14 17:52:46.239] INFO    org.mule.module.management.agent.AbstractJmxAgent [qtp18605202-31]: (t:null) Registered Connector Service with name Mule.test-test:type=Connector,name="connector.http.mule.default.1"
+[2015-12-14 17:52:46.240] INFO    org.mule.DefaultMuleContext [qtp18605202-31]: (t:null) 
+**********************************************************************
+* Application: test-test                                             *
+* OS encoding: /, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   JMX Agent                                                        *
+*   Batch module default engine                                      *
+*   Wrapper Manager                                                  *
+**********************************************************************
+[2015-12-14 17:54:02.865] INFO    org.mule.api.processor.LoggerMessageProcessor [[test-test].Copy_of_echoFlow.stage1.02]: (t:null) 
+org.mule.DefaultMuleMessage
+{
+  id=a93bf1a0-a28b-11e5-9d9b-0e4b77f24b53
+  payload=org.glassfish.grizzly.utils.BufferInputStream
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    pollingFrequency=1000
+  INBOUND scoped properties:
+    MULE_ORIGINATING_ENDPOINT=endpoint.polling.1912630717
+    cache-control=public, no-cache="Set-Cookie", max-age=59
+    cf-ray=254bc58d3e052390-IAD
+    connection=keep-alive
+    content-type=text/html; charset=utf-8
+    date=Mon, 14 Dec 2015 17:54:02 GMT
+    expires=Mon, 14 Dec 2015 17:55:01 GMT
+    http.reason=OK
+    http.status=200
+    last-modified=Mon, 14 Dec 2015 17:54:01 GMT
+    server=cloudflare-nginx
+    set-cookie=[__cfduid=dc3171fe8e760735d044f568ddc7fa1f61450115642; expires=Tue, 13-Dec-16 17:54:02 GMT; path=/; domain=.stackoverflow.com; HttpOnly, prov=7f585e15-49e0-41cb-b57f-ffa557f4d075; domain=.stackoverflow.com; expires=Fri, 01-Jan-2055 00:00:00 GMT; path=/; HttpOnly]
+    transfer-encoding=chunked
+    vary=*
+    x-frame-options=SAMEORIGIN
+    x-request-guid=6deef0ce-64d0-4dc9-b6a0-a40a6b22ce08
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+[2015-12-14 17:54:02.867] INFO    org.mule.api.processor.LoggerMessageProcessor [[test-test].echoFlow.stage1.02]: (t:null) 
+org.mule.DefaultMuleMessage
+{
+  id=a93ba380-a28b-11e5-9d9b-0e4b77f24b53
+  payload=org.glassfish.grizzly.utils.BufferInputStream
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    pollingFrequency=1000
+  INBOUND scoped properties:
+    MULE_ORIGINATING_ENDPOINT=endpoint.polling.1912630717
+    cache-control=public, no-cache="Set-Cookie", max-age=59
+    cf-ray=254bc58d2f4723fc-IAD
+    connection=keep-alive
+    content-type=text/html; charset=utf-8
+    date=Mon, 14 Dec 2015 17:54:02 GMT
+    expires=Mon, 14 Dec 2015 17:55:01 GMT
+    http.reason=OK
+    http.status=200
+    last-modified=Mon, 14 Dec 2015 17:54:01 GMT
+    server=cloudflare-nginx
+    set-cookie=[__cfduid=dd5351ad84577c9a97c84f87d6c5fe1f41450115642; expires=Tue, 13-Dec-16 17:54:02 GMT; path=/; domain=.stackoverflow.com; HttpOnly, prov=36c7d2b8-01d1-4f3f-abea-4a4d0a563034; domain=.stackoverflow.com; expires=Fri, 01-Jan-2055 00:00:00 GMT; path=/; HttpOnly]
+    transfer-encoding=chunked
+    vary=*
+    x-frame-options=SAMEORIGIN
+    x-request-guid=74d2f249-e609-4369-b631-bd116b129291
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+[2015-12-14 17:54:23.248] INFO    org.mule.api.processor.LoggerMessageProcessor [[test-test].Copy_of_echoFlow.stage1.02]: (t:null) 
+org.mule.DefaultMuleMessage
+{
+  id=b5681800-a28b-11e5-9d9b-0e4b77f24b53
+  payload=org.glassfish.grizzly.utils.BufferInputStream
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>

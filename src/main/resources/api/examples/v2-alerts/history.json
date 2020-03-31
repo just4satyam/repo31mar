@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "triggeredAt": 1458117301985,
+      "context": {
+        "user": "jeffh",
+        "resource": "testapi-jeffdasd2"
+      },
+      "severity": "INFO",
+      "condition": {
+        "type": "deployment-success"
+      },
+      "actions": [
+        {
+          "state": "failed",
+          "type": "email"
+        }
+      ]
+    },
+    {
+      "triggeredAt": 1458116181786,
+      "context": {
+        "user": "jeffh",
+        "resource": "testapi-jeffdasd2"
+      },
+      "severity": "INFO",
+      "condition": {
+        "type": "deployment-success"
+      },
+      "actions": [
+        {
+          "state": "failed",
+          "type": "email"
+        }
+      ]
+    }
+  ],
+  "total": 2
+}

@@ -1,0 +1,26 @@
+{
+  "name": "myProductionVpc",
+  "region": "us-east-1",
+  "cidrBlock": "192.168.1.0/24",
+  "internalDns": {
+    "dnsServers": ["8.8.8.8","8.8.8.4"],
+    "specialDomains": ["mydomain.local","mydomain.localdomain"]
+  },
+  "isDefault": false,
+  "associatedEnvironments": ["eeeeb145-6f79-402d-85fc-8c90905d2490"],
+  "sharedWith": ["0000000-1111-2222-3333-44444444444"],
+  "firewallRules": [
+    {
+      "cidrBlock": "0.0.0.0/0",
+      "protocol": "tcp",
+      "fromPort": 8081,
+      "toPort": 8082
+    },
+    {
+      "cidrBlock": "192.168.1.0/24",
+      "protocol": "tcp",
+      "fromPort": 8091,
+      "toPort": 8092
+    }
+  ]
+}

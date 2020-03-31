@@ -1,0 +1,17 @@
+{
+    "maxScale": 2,
+    "minScale": 1,
+    "scaleType": "WORKER_COUNT",
+    "description": "policy_name",
+    "metric": "CPU",
+    "scaleUpNextScaleWaitMins": 30,
+    "scaleDownNextScaleWaitMins": 30,
+    "scaleUp": {
+        "value": 80,
+        "periodCount": 10
+    },
+    "scaleDown": {
+        "value": 20,
+        "periodCount": 10
+    }
+}

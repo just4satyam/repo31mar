@@ -1,0 +1,190 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "CloudHub Load Balancer",
+  "allowAdditionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The Load Balancer id"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The name of the Load Balancer"
+    },
+    "domain": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The DNS domain for the Load Balancer"
+    },
+    "state": {
+      "type": "string",
+      "enum": ["STOPPED", "STARTING", "STARTED", "STOPPING", "UPDATING"],
+      "description": "The current state of the Load Balancer"
+    },
+    "ipAddresses": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "List of static IP addresses for the Load Balancer",
+      "items": {
+        "type": "string",
+        "minLength": 7,
+        "maxLength": 15
+      }
+    },
+    "ipWhitelist": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "CIDR blocks to allow connections from",
+      "items": {
+        "type": "string",
+        "minLength": 9,
+        "maxLength": 18
+      },
+      "default": ["0.0.0.0/0"]
+    },
+    "httpMode": {
+      "type": "string",
+      "enum": ["on", "off", "redirect"],
+      "description": "Specifies whether the Load Balancer listens for HTTP requests on port 80. If set to redirect, all HTTP requests will be redirected to HTTPS",
+      "default": "redirect"
+    },
+    "defaultSslEndpoint": {
+      "type": "integer",
+      "description": "The default certificate that will be served for requests not using SNI, or requesting a non-existing certificate",
+      "default": "0"
+    },
+    "sslEndpoints": {
+      "type": "array",
+      "description": "A list of server certificate files",
+      "items": {
+        "type": "object",
+        "description": "A TLS endpoint that corresponds to a certificate",
+        "allowAdditionalProperties": false,
+        "properties": {
+          "publicKey": {
+            "type": "string",
+            "description": "PEM encoded certificate or chain of public certificates that will be served to clients"
+          },
+          "privateKey": {
+            "type": "string",
+            "description": "PEM encoded private key corresponding to the first certificate in the publicKey attribute"
+          },
+          "clientCert": {
+            "type": "string",
+            "description": "PEM encoded certificate or chain of public certificates that clients will use to authenticate"
+          },
+          "revocationList": {
+            "type": "string",
+            "description": "PEM encoded X509 certificate revocation list, signed by the clientCert"
+          },
+          "publicKeyDigest": {
+            "type": "string",
+            "description": "The SHA1 digest, in human-readable hex, of the certificate or certificate chain",
+            "minLength": 40,
+            "maxLength": 40
+          },
+          "privateKeyDigest": {
+            "type": "string",
+            "description": "The SHA1 digest, in human-readable hex, of the private key corresponding to the private key. Note that the digests will not match if the Public key is a trust chain",
+            "minLength": 40,
+            "maxLength": 40
+          },
+          "publicKeyCN": {
+            "type": "string",
+            "description": "The server certificate's Common Name",
+            "minLength": 1
+          },
+          "publicKeySANs": {
+            "type": "array",
+            "description": "A list of Subject Alternate Names in the certificate",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "clientCertDigest": {
+            "type": "string",
+            "description": "The SHA1 digest, in human-readable hex, of the CA certificate or certificate chain that is used for authenticating client connections",
+            "minLength": 40,
+            "maxLength": 40
+          },
+          "clientCertCN": {
+            "type": "string",
+            "description": "The CA certificate's Common Name",
+            "minLength": 1
+          },
+          "revocationListDigest": {
+            "type": "string",
+            "description": "The SHA1 digest, in human-readable hex of the CRL file",
+            "minLength": 40,
+            "maxLength": 40
+          },
+          "revocationListLastUpdate": {
+            "type": "string",
+            "description": "Date the CRL was pulled from the CA",
+            "minLength": 1
+          },
+          "revocationListNextUpdate": {
+            "type": "string",
+            "description": "Date the CRL expires. No clients will be authenticated after this date",
+            "minLength": 1
+          },
+          "revocationListSerial": {
+            "type": "string",
+            "description": "Serial number for the CRL file",
+            "minLength": 1
+          },
+          "verifyClientMode": {
+            "type": "string",
+            "enum": ["off", "on", "optional"],
+            "description": "Client authentication mode. If off, no authentication will be done. If optional, requests will be proxied to the upstream application even if the Load Balancer can't authenticate the client"
+          },
+          "tlsv1": {
+            "type": "boolean",
+            "description": "If set to true, TLSv1 will be supported in addition to TLSv1.1 and TLSv1.2",
+            "default": false
+          },
+          "mappings": {
+            "type": "array",
+            "uniqueItems": true,
+            "description": "The URL mapping rules for this particular SSL endpoint",
+            "items": {
+              "type": "object",
+              "properties": {
+                "inputUri": {
+                  "type": "string",
+                  "description": "The URL that will be requested by the client. Accepts variables, indicated by using curly braces"
+                },
+                "appName": {
+                  "type": "string",
+                  "description": "The CloudHub application name that will process the request"
+                },
+                "appUri": {
+                  "type": "string",
+                  "description": "The CloudHub application URL endpoint hat will process the request"
+                },
+		"upstreamProtocol": {
+		  "type": "string",
+		  "enum": ["http", "https"],
+		  "description": "The protocol that the Mule application listens on. HTTP on port 8091 or HTTPS on port 8091",
+		  "default": "http"
+		}
+              },
+              "required": ["inputUri", "appName", "appUri"]
+            },
+            "default": [{
+              "inputUri": "{app}/",
+              "appName": "{app}",
+              "appUri": "/",
+	      "upstreamProtocol": "http"
+            }]
+          }
+        }
+      }
+    }
+  }
+}
+

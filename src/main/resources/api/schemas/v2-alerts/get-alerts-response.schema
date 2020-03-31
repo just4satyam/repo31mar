@@ -1,0 +1,367 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "severity": {
+                "enum": ["INFO", "WARNING", "CRITICAL"]
+            },
+            "condition": {
+                "type": "object",
+                "oneOf": [
+                    {
+                        "$ref": "#/conditionDefinitions/application-notification"
+                    },
+                    {
+                        "$ref": "#/conditionDefinitions/autoscaled"
+                    },
+                    {
+                        "$ref": "#/conditionDefinitions/cpu"
+                    },
+                    {
+                        "$ref": "#/conditionDefinitions/memory"
+                    },
+                    {
+                        "$ref": "#/conditionDefinitions/deployment-failed"
+                    },
+                    {
+                        "$ref": "#/conditionDefinitions/deployment-success"
+                    },
+                    {
+                        "$ref": "#/conditionDefinitions/event-threshold-exceeded"
+                    },
+                    {
+                        "$ref": "#/conditionDefinitions/sdg-up"
+                    },
+                    {
+                        "$ref": "#/conditionDefinitions/sdg-down"
+                    },
+                    {
+                        "$ref": "#/conditionDefinitions/worker-unresponsive"
+                    }
+                ]
+            },
+            "organizationId": {
+                "type": "string"
+            },
+            "environmentId": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            },
+            "productName": {
+                "type": "string"
+            },
+            "actions": {
+                "id": "http://jsonschema.net/actions",
+                "type": "array",
+                "items": {
+                    "id": "http://jsonschema.net/actions/0",
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "id": "http://jsonschema.net/actions/0/type",
+                            "type": "string"
+                        },
+                        "emails": {
+                            "id": "http://jsonschema.net/actions/0/emails",
+                            "type": "array",
+                            "items": {
+                                "id": "http://jsonschema.net/actions/0/emails/0",
+                                "type": "string"
+                            }
+                        },
+                        "subject": {
+                            "id": "http://jsonschema.net/actions/0/subject",
+                            "type": "string"
+                        },
+                        "content": {
+                            "id": "http://jsonschema.net/actions/0/content",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "enabled": {
+                "id": "http://jsonschema.net/enabled",
+                "type": "boolean"
+            },
+            "lastModified": {
+                "id": "http://jsonschema.net/lastModified",
+                "type": "integer"
+            },
+            "isSystem": {
+                "id": "http://jsonschema.net/isSystem",
+                "type": "boolean"
+            },
+            "createdAt": {
+                "id": "http://jsonschema.net/createdAt",
+                "type": "integer"
+            }
+        },
+        "required": [
+            "name",
+            "severity",
+            "condition",
+            "organizationId",
+            "environmentId",
+            "id",
+            "productName",
+            "actions",
+            "enabled",
+            "lastModified",
+            "isSystem",
+            "createdAt"
+        ],
+        "conditionDefinitions": {
+            "application-notification": {
+                "required": [
+                    "resources",
+                    "text",
+                    "priority"
+                ],
+                "properties": {
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "text": {
+                        "type": "string"
+                    },
+                    "priority": {
+                        "enum": [
+                            "*",
+                            "INFO",
+                            "WARN",
+                            "ERROR"
+                        ]
+                    }
+                }
+            },
+            "autoscaled": {
+                "required": [
+                    "resources"
+                ],
+                "properties": {
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    }
+                }
+            },
+            "cpu": {
+                "required": [
+                    "resources",
+                    "operator",
+                    "value",
+                    "periodMins",
+                    "periodCount"
+                ],
+                "properties": {
+                    "value": {
+                        "type": "integer",
+                        "maximum": 100,
+                        "minimum": 1
+                    },
+                    "operator": {
+                        "enum": [
+                            "GREATER_THAN",
+                            "LESS_THAN"
+                        ]
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "periodMins": {
+                        "type": "integer",
+                        "maximum": 60,
+                        "minimum": 1
+                    },
+                    "periodCount": {
+                        "type": "integer",
+                        "maximum": 20,
+                        "minimum": 1
+                    },
+                    "triggerBehavior": {
+                        "enum": [
+                            "TRIGGER_ON_STATE_CHANGE",
+                            "TRIGGER_REPEATEDLY_IN_ALARM_STATE"
+                        ]
+                    }
+                }
+            },
+            "deployment-failed": {
+                "required": [
+                    "resources"
+                ],
+                "properties": {
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    }
+                }
+            },
+            "deployment-success": {
+                "required": [
+                    "resources"
+                ],
+                "properties": {
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    }
+                }
+            },
+            "event-threshold-exceeded": {
+                "required": [
+                    "resources",
+                    "threshold",
+                    "period",
+                    "periodTimeUnit"
+                ],
+                "properties": {
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "threshold": {
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "period": {
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "periodTimeUnit": {
+                        "enum": [
+                            "HOUR",
+                            "MINUTE"
+                        ]
+                    }
+                }
+            },
+            "memory": {
+                "required": [
+                    "resources",
+                    "operator",
+                    "value",
+                    "periodMins",
+                    "periodCount"
+                ],
+                "properties": {
+                    "value": {
+                        "type": "integer",
+                        "maximum": 100,
+                        "minimum": 1
+                    },
+                    "operator": {
+                        "enum": [
+                            "GREATER_THAN",
+                            "LESS_THAN"
+                        ]
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "periodMins": {
+                        "type": "integer",
+                        "maximum": 60,
+                        "minimum": 1
+                    },
+                    "periodCount": {
+                        "type": "integer",
+                        "maximum": 20,
+                        "minimum": 1
+                    },
+                    "triggerBehavior": {
+                        "enum": [
+                            "TRIGGER_ON_STATE_CHANGE",
+                            "TRIGGER_REPEATEDLY_IN_ALARM_STATE"
+                        ]
+                    }
+                }
+            },
+            "sdg-down": {
+                "required": [
+                    "resources"
+                ],
+                "properties": {
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    }
+                }
+            },
+            "sdg-up": {
+                "required": [
+                    "resources"
+                ],
+                "properties": {
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    }
+                }
+            },
+            "worker-unresponsive": {
+                "required": [
+                    "resources"
+                ],
+                "properties": {
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    }
+                }
+            }
+        }
+    }
+}

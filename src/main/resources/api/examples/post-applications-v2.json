@@ -1,0 +1,21 @@
+{
+    "domain": "test-test",
+    "muleVersion": {
+        "version": "3.7.0"
+    },
+    "region": "us-east-1",
+    "monitoringEnabled": true,
+    "monitoringAutoRestart": true,
+    "workers": {
+        "amount": 1,
+        "type": {
+            "name": "Medium",
+            "weight": 1,
+            "cpu": "1 vCore",
+            "memory": "1.5 GB memory"
+        }
+    },
+    "loggingNgEnabled": true,
+    "persistentQueues": true,
+    "objectStoreV1": true
+}

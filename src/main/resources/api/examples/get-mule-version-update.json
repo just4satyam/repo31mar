@@ -1,0 +1,17 @@
+{
+  "id": "581bbe7383a74dc0901efd1c",
+  "name": "Initial release",
+  "releaseDate": 1476467030568,
+  "flags": {
+    "performLog4jReplacement": true,
+    "skipMMCPairing": true,
+    "log4j1Used": false,
+    "usingMuleAgent": false,
+    "vpnSupported": true,
+    "monitoringSupported": true,
+    "objectStoreV1": false,
+    "loggingNgSupported": true,
+    "diagnosticsSupported": true,
+    "persistentQueuesSupported": true
+  }
+}

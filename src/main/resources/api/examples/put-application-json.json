@@ -1,0 +1,15 @@
+{
+  "applicationSource": {
+    "fileSource": "5a0251232f6ce02c9b813bd4",
+    "fileChecksum": "1ac0a8293da1d327558707662c4fe567",
+    "source": "SANDBOX"
+  },
+  "applicationInfo": {
+    "workers": {
+      "type":{
+        "name":"Micro"
+      }
+    }
+  },
+  "autoStart": true
+}

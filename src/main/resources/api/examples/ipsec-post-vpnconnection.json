@@ -1,0 +1,13 @@
+{
+  "name": "myDatacenterVpn",
+  "remoteAsn": 65000,
+  "remoteIpAddress": "100.100.100.100",
+  "remoteNetworks": [],
+  "tunnelConfigs": [{
+    "psk": "23847329fn3u__...",
+    "ptpCidr": "169.254.12.0/30"
+  }, {
+    "psk": "nsdkjfnsauf23f2linf",
+    "ptpCidr": "169.254.12.4/30"
+  }]
+}

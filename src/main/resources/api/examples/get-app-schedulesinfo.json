@@ -1,0 +1,44 @@
+[
+    {
+        "id": "schedule-id1",
+        "flow": "Copy_of_echoFlow",
+        "name": "Copy_of_echoFlow Poll",
+        "href": "http://qa.anypoint.mulesoft.com:8080/api/applications/poll-test/schedules/565f7691e4b0365bb4f4d774_Copy_of_echoFlow_polling_Copy_of_echoFlow_1",
+        "lastRun": "2015-12-09T01:22:59.752Z",
+        "enabled": true,
+        "status": "IDLE",
+        "schedule": {
+            "timeUnit": "seconds",
+            "period": 10
+        },
+        "run-href": "http://qa.anypoint.mulesoft.com:8080/api/applications/poll-test/schedules/565f7691e4b0365bb4f4d774_Copy_of_echoFlow_polling_Copy_of_echoFlow_1/run"
+    },
+    {
+        "id": "schedule-id2",
+        "flow": "echoFlow",
+        "name": "echoFlow Poll",
+        "href": "http://qa.anypoint.mulesoft.com:8080/api/applications/poll-test/schedules/565f7691e4b0365bb4f4d774_echoFlow_polling_echoFlow_1",
+        "lastRun": "2015-12-09T01:22:54.343Z",
+        "enabled": true,
+        "status": "IDLE",
+        "schedule": {
+            "timeUnit": "seconds",
+            "period": 30
+        },
+        "run-href": "http://qa.anypoint.mulesoft.com:8080/api/applications/poll-test/schedules/565f7691e4b0365bb4f4d774_echoFlow_polling_echoFlow_1/run"
+    },
+    {
+        "id": "schedule-id3",
+        "flow": "echoFlow1",
+        "name": "echoFlow Poll1",
+        "href": "http://qa.anypoint.mulesoft.com:8080/api/applications/poll-test/schedules/565f7691e4b0365bb4f4d774_echoFlow_polling_echoFlow_1",
+        "lastRun": "2015-12-09T01:22:54.343Z",
+        "enabled": true,
+        "status": "IDLE",
+        "schedule": {
+            "timeUnit": "seconds",
+            "period": 30
+        },
+        "run-href": "http://qa.anypoint.mulesoft.com:8080/api/applications/poll-test/schedules/565f7691e4b0365bb4f4d774_echoFlow_polling_echoFlow_1/run"
+    }
+]

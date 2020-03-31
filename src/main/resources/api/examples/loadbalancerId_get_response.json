@@ -1,0 +1,36 @@
+{
+  "id": "571ffe36e4b00d565d743fe5",
+  "name": "myloadbalancer",
+  "domain": "lb.anypointdns.net",
+  "state": "STOPPED",
+  "IpAddresses": [
+    "52.202.80.104",
+    "52.202.80.105"
+  ],
+  "ipWhitelist": [
+    "192.0.2.0/24",
+    "198.51.100.23/32"
+  ],
+  "httpMode": "redirect",
+  "defaultSslEndpoint": 0,
+  "tlsv1": false,
+  "sslEndpoints": [
+    {
+      "privateKeyDigest": "75caede4e70d7ffc4bc2ed8f1924467a9d030917",
+      "publicKeyDigest": "fd562a311962ee8e278b04982f6b5fc1f5c85535",
+      "publicKeyCN": "www.mydomain.com",
+      "publicKeySANs": ["uat.mydomain.com", "qa.mydomain.com"],
+      "clientCertDigest": "fd562a311962ee8e278b04982f6b5fc1f5c85535",
+      "clientCertCN": "GeoTrust Primary Certification Authority – G3",
+      "revocationListDigest": "6c390fbdadacb9c4c99341167771943b798a12ef",
+      "verifyClientMode": "off",
+      "mappings": [
+        {
+          "inputUri": "{app}/",
+          "appName": "{app}",
+          "appUri": "/"
+        }
+      ]
+    }
+  ]
+}
